@@ -1,12 +1,18 @@
+#ifndef VAR_H
+#define VAR_H
 #include <iostream>
 using namespace std;
+#define LEFT  0
+#define RIGHT  1
 
-const string nothing = "Nothing";
-	const string PortCullis = "PortCullis";
-	const string ChevalDeFrise = "Cheval de Frise";
-	const string Moat = "Moat";
-	const string Ramparts = "Ramparts";
-	const string Drawbridge = "Drawbridge";
-	const string Sallyport = "Sallyport";
-	const string Rockwall = "Rockwall";
-	const string RoughTerrain = "Rough Terrain";
+const string snothing = "Nothing";
+const string sportcullis = "PortCullis";
+const string schevaldefrise = "Cheval de Frise";
+const string smoat = "Moat";
+const string sramparts = "Ramparts";
+const string sdrawbridge = "Drawbridge";
+const string ssallyport = "Sallyport";
+const string srockwall = "Rockwall";
+const string sroughterrain = "Rough Terrain";
+
+#endif
