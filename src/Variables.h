@@ -4,6 +4,7 @@
 using namespace std;
 #define LEFT  0
 #define RIGHT  1
+#define SDPP  1/(5.19*260)
 
 const string snothing = "Nothing";
 const string sportcullis = "PortCullis";

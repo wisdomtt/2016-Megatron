@@ -1,12 +1,14 @@
 #include "Robot.h"
 #include "Autons.h"
 #include "Variables.h"
+#include "WPILib.h"
+#include "Robot.h"
+#include <iostream>
+//
 using namespace std;
-	void Robot::Robot() : Robot::defense(){//Constructor
-		sticks[LEFT] = new Joystick(0);
-		sticks[RIGHT] = new Joystick(1);
-		myRobot = new RobotDrive(0,1,2,3);
-		myRobot->SetExpiration(0.1);
+	void Robot::SetEncoders(){
+		DriveEnc[LEFT]->SetDistancePerPulse(SDPP);
+		DriveEnc[RIGHT]->SetDistancePerPulse(SDPP);
 	}
 	void Robot::RobotInit()//ChoosingAutons
 	{
@@ -24,9 +26,9 @@ using namespace std;
 
 	void Robot::Autonomous()//Deploying Chosen Autons
 	{
+		SetEncoders();
 		string DefenseSelection = *((string*)defense->GetSelected());
 		AdaptiveAuton(DefenseSelection);
-
 	}
 
 	void Robot::OperatorControl()//Teleop
@@ -35,8 +37,17 @@ using namespace std;
 		while (IsOperatorControl() && IsEnabled())
 		{
 			myRobot->TankDrive(sticks[LEFT]->GetY(), sticks[RIGHT]->GetY());
+			if(gamepad->GetRawButton(0) == true){
+				arms[LEFT]->Set(1.0);
+				arms[RIGHT]->Set(1.0);
+			}
+			else if(gamepad->GetRawButton(1) == true){
+				arms[LEFT]->Set(-1.0);
+				arms[RIGHT]->Set(-1.0);
+			}
 		}
 	}
+
 
 
 

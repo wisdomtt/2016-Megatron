@@ -1,6 +1,5 @@
 #ifndef AUTON_H
 #define AUTON_H
-#include <iostream>
 #include "Robot.h"
 using namespace std;
 void AdaptiveAuton(string defense){
@@ -9,8 +8,8 @@ void AdaptiveAuton(string defense){
 }
 void Robot::PortCullis(){
 	myRobot->TankDrive(1.0, 1.0);
-	Wait(3.0);
-	myRobot->TankDrive(0.0, 0.0);
+	threshold(DriveEnc[LEFT], 4.0, 5.0);
+
 }
 void Robot::ChevalDeFrise(){
 	myRobot->TankDrive(1.0, 1.0);
