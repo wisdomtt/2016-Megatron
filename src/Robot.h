@@ -33,10 +33,10 @@ class Robot: public SampleRobot{
 	void Moat();
 	void Ramparts();
 	void Drawbridge();
-	void Sallyport();
-	void Rockwall();
+	void SallyPort();
+	void RockWall();
 	void RoughTerrain();
-
+	void AdaptiveAuton(string defense);
 	void SetEncoders();
 	void RobotInit();
 	void Autonomous();

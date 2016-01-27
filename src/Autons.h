@@ -2,8 +2,28 @@
 #define AUTON_H
 #include "Robot.h"
 using namespace std;
-void AdaptiveAuton(string defense)
+void Robot::AdaptiveAuton(string defense)
 {
+	if(defense == "PortCullis"){
+		PortCullis();
+	} else if (defense == "Cheval de Frise"){
+		ChevalDeFrise();
+	}else if (defense == "Drawbridge"){
+		Drawbridge();
+	}else if(defense == "Moat"){
+		Moat();
+	}else if (defense=="Ramparts"){
+		Ramparts();
+	}else if (defense == "Drawbridge"){
+		Drawbridge();
+	}else if (defense == "Sallyport"){
+		SallyPort();
+	}
+	else if(defense == "Rockwall"){
+		RockWall();
+	}else if (defense == "Routh Terrain"){
+		RoughTerrain();
+	}
 	//Function handles all Auton's
 }
 void Robot::PortCullis()
