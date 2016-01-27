@@ -35,11 +35,11 @@ using namespace std;
 		    ePortCullis,
 		    eChevalDeFrise,
 		    eMoat,
-			eRamparts,
-			eDrawbridge,
-			eSallyPort,
-			eRockWall,
-			eRoughTerrain,
+		    eRamparts,
+		    eDrawbridge,
+		    eSallyPort,
+		    eRockWall,
+		    eRoughTerrain,
 		}
 		string_code hashit (std::string const& inString)
 		{
