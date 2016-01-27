@@ -12,7 +12,7 @@ using namespace std;
 	}
 	void Robot::RobotInit()//ChoosingAutons
 	{
-		defense->AddDefault(snothing, (void*)&snothing);
+		defense->AddDefault(nothing, (void*)&snothing);
 		defense->AddObject(sportcullis, (void*)&sportcullis);
 		defense->AddObject(schevaldefrise, (void*)&schevaldefrise);
 		defense->AddObject(smoat, (void*)&smoat);
@@ -28,8 +28,61 @@ using namespace std;
 	{
 		SetEncoders();
 		string DefenseSelection = *((string*)defense->GetSelected());
-		AdaptiveAuton(DefenseSelection);
-	}
+		//AdaptiveAuton(DefenseSelection);
+		enum string_code
+		{
+		    eNothing,
+		    ePortCullis,
+		    eChevalDeFrise,
+		    eMoat,
+		    eRamparts,
+		    eDrawbridge,
+		    eSallyPort,
+		    eRockWall,
+		    eRoughTerrain,
+		}
+		string_code hashit (std::string const& inString)
+		{
+		    if (inString == "Nothing") return eNothing;
+		    if (inString == "PortCullis") return ePortCullis;
+		    if (inString == "ChevalDeFrise") return eChevalDeFrise;
+		    if (inString == "Moat") return eMoat;
+		    if (inString == "Ramparts") return eRamparts;
+		    if (inString == "Drawbridge") return eDrawbridge;
+		    if (inString == "SallyPort") return eSallyPort;
+		    if (inString == "RockWall") return eRockWall;
+		    if (inString == "RoughTerrain") return eRoughTerrain;
+		}
+		switch (hashit(stringValue))
+		    {
+		    	case eNothing:
+		    		break;
+		    	case ePortCullis:
+		    		void Robot::PortCullis();
+		    		break;
+		    	case eChevalDeFrise:
+		    		void Robot::ChevalDeFrise();
+		    		break;
+		    	case eMoat:
+		    		void Robot::Moat();
+		    		break;
+		    	case eRamparts:
+		    		void Robot::Ramparts();
+		    		break;
+		    	case eDrawbridge:
+		    		void Robot::Drawbridge();
+		    		break;
+		    	case eSallyPort:
+		    		void Robot::SallyPort();
+		    		break;
+		    	case eRockWall:
+		    		void Robot::RockWall();
+		    		break;
+		    	case eRoughTerrain:
+		    		void Robot::RoughTerrain();
+		    		break;
+		    }
+
 
 	void Robot::OperatorControl()//Teleop
 	{

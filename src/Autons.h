@@ -2,46 +2,53 @@
 #define AUTON_H
 #include "Robot.h"
 using namespace std;
-void AdaptiveAuton(string defense){
+void AdaptiveAuton(string defense)
+{
 	//Function handles all Auton's
-
 }
-void Robot::PortCullis(){
+void Robot::PortCullis()
+{
 	myRobot->TankDrive(1.0, 1.0);
 	threshold(DriveEnc[LEFT], 4.0, 5.0);
-
 }
-void Robot::ChevalDeFrise(){
+void Robot::ChevalDeFrise()
+{
 	myRobot->TankDrive(1.0, 1.0);
 	Wait(3.0);
 	myRobot->TankDrive(0.0, 0.0);
 }
-void Robot::Drawbridge(){
+void Robot::Drawbridge()
+{
 	myRobot->TankDrive(1.0, 1.0);
 	Wait(3.0);
 	myRobot->TankDrive(0.0, 0.0);
 }
-void Robot::Moat(){
+void Robot::Moat()
+{
 	myRobot->TankDrive(1.0, 1.0);
 	Wait(3.0);
 	myRobot->TankDrive(0.0, 0.0);
 }
-void Robot::Ramparts(){
+void Robot::Ramparts()
+{
 	myRobot->TankDrive(1.0, 1.0);
 	Wait(3.0);
 	myRobot->TankDrive(0.0, 0.0);
 }
-void Robot::Rockwall(){
+void Robot::RockWall()
+{
 	myRobot->TankDrive(1.0, 1.0);
 	Wait(3.0);
 	myRobot->TankDrive(0.0, 0.0);
 }
-void Robot::RoughTerrain(){
+void Robot::RoughTerrain()
+{
 	myRobot->TankDrive(1.0, 1.0);
 	Wait(3.0);
 	myRobot->TankDrive(0.0, 0.0);
 }
-void Robot::Sallyport(){
+void Robot::SallyPort()
+{
 	myRobot->TankDrive(1.0, 1.0);
 	Wait(3.0);
 	myRobot->TankDrive(0.0, 0.0);
