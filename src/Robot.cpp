@@ -38,14 +38,7 @@ using namespace std;
 		while (IsOperatorControl() && IsEnabled())
 		{
 			myRobot->TankDrive(sticks[LEFT]->GetY(), sticks[RIGHT]->GetY());
-			if(gamepad->GetRawButton(0) == true){
-				arms[LEFT]->Set(1.0);
-				arms[RIGHT]->Set(1.0);
-			}
-			else if(gamepad->GetRawButton(1) == true){
-				arms[LEFT]->Set(-1.0);
-				arms[RIGHT]->Set(-1.0);
-			}
+			arms[LEFT] = gamepad->GetY(GenericHID::kLeftHand);
 		}
 	}
 
